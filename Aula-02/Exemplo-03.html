@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo-03</title>
+</head>
+<body>
+    <script type="text/javascript">
+        
+        //criando array, definindo o tamanho
+        var a = new Array(10);
+
+        a[0] = "xyz";
+        a[1] = true;
+        a[2] = 1.500;
+        console.log(a);
+
+        var nomes = ['Felipe']; // declarando um Array na forma literal 
+        console.log("------------Array inicial------------------");
+        console.log(nomes);
+        console.log(nomes.length); // lenght retorna o tamanho da lista que nesse caso é 1
+
+        nomes.push('Kennedy'); // um novo nome foi adicionado a lista que agora contem 'Felipe' e 'Kennedy' - adiciona ao final 
+        console.log("--------------------");
+        console.log(nomes);
+        console.log(nomes.length); //tamanho igual a 2 
+
+        nomes.push(12); //Js nao repara nao tipo da variavel, ele apenas acrescenta na array 
+        nomes.push(false);
+        console.log(nomes);
+        
+        nomes.unshift('Ana');// adiciona mais um item a lista porem no inicio dela
+        console.log(nomes);
+
+        delete nomes[1]; //remove o valor da posicao informado porem a posicao continua existindo
+        console.log(nomes);
+
+        var nome = nomes.pop(); // remove e retorna o ultimo elemento de um array 
+        console.log("Elemento removido: " + nome);
+        console.log(nomes);
+
+        nome = nomes.shift(); // remove e retorna o primeiro elemento de um array
+        console.log("Elemento removido: " + nome);
+
+        var test = [1,2,3,4];
+        test.splice(2,1); // voce especifica o indice inicial e a quantidade de elementos a seremos removidos incluindo o elemento do indice 
+        console.log(test);
+        
+        console.log("---------------------");
+        console.log(typeof nomes); // retorna obeject
+
+
+        //criando array de array 
+        var multidimensional = [ [1,2,3],[4,5,6],[7,8,9] ];
+        console.log("-----------Array de Array----------");
+        console.log(multidimensional);
+
+
+    </script>
+</body>
+</html>

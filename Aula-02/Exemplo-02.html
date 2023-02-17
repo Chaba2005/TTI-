@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo-02</title>
+</head>
+<body>
+    <script>
+        //string para char
+        var str = "hello";
+
+        //spread operator
+        var chars = [...str] //converter uma string em um array, facilitando pegar letra por letra
+        console.log(chars);
+        // ['h', 'e', 'l', 'l', 'o']
+
+        var nome = 'Ricardo';
+        var sobrenome = 'Romero';
+        var idade =  17;
+
+        console.log("Meu nome é " + nome + ' ' + sobrenome + ". Eu tenho " + idade);
+        console.log('Meu nome é ' + nome + " " + sobrenome + '. Eu tenho ' + idade);
+        console.log(`Meu nome é ${nome} ${sobrenome}. Eu tenho ${idade}`);
+
+        //extração de parte de uma string
+        var texto = "Mergulhando em tecnologia";
+        console.log(texto.substr(0,11));; //Mergulhando
+
+        texto = "Unicamp";
+        console.log("Tamanho:" +texto.length);
+        console.log(texto.toUpperCase()); //UNICAMP
+        console.log(texto.toLowerCase()); //unicamp
+
+        console.log("-------charAt()----------");
+        console.log(texto.charAt(3));
+
+        console.log("-------Split()-----------");
+        texto = "23/10/2021";
+        var aux = texto.split("/");
+        console.log(aux);
+
+        if (aux[1] == '10') {
+            var mes = 'outubro';
+        }
+
+        console.log('Limeira, ' + aux[0] + ' de ' + mes + ' de ' + aux[2]);
+
+        var texto2 = "COTIL-UNICAMP-LIMEIRA";
+
+        console.log("--------indexOf-------");
+        console.log(texto2.indexOf('LIMEIRA'));
+
+        //startsWith e endsWith
+        var nomeTeste = "Matheus";
+        console.log(nomeTeste.startsWith('Má'));
+        console.log(nomeTeste.endsWith('us'));
+
+        //replace - substituir parte de uma string por outra
+        var nome = "André";
+        var comunicacao = "Olá, sr. nomeusario, informamos que a partir da presente data o senhor tem 50% de desconto em nossa loja.";
+        console.log(comunicacao.replace("nomeusuario", nome));
+
+        //trim - remove os espaços em branco no início ou fim de uma string
+        var login = "   andre@emailteste.com    ";
+        let loginSemEspaço = login.trim();
+        console.log(loginSemEspaço); //andre@emailteste.com
+    </script>
+</body>
+</html>
