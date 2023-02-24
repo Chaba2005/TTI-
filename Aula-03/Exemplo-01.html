@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo-01</title>
+</head>
+<body>
+    <script>
+        //concatenando arrays = juntando em um só
+        var tecnico = ["LP", "BD", "DAW"];
+        var medio = ["Matemática", "Português", "Biologia"];
+        var formacaoCompleta = tecnico.concat(medio);
+
+        console.log("------------Arrays concatenados--------------");
+        console.log(formacaoCompleta);
+
+        //gerando String com elementos do array "tecnico", separando pelo caracter selecionado
+        var stringResutalnte = tecnico.join("-");
+        console.log("----------String resultante = " + stringResultante);
+
+        //Copiando um pedaço do array
+        var formacaoBasica =  medio.slice(1,2); //(a partir de determinada posicao, quantas posicoes)
+        console.log("------- formacaoBasica = " + formacaoBasica);
+
+        //invertendo os elementos do array
+        tecnico.reverse();
+        console.log("-----Array invertido-----");
+        console.log(tecnico);
+
+        //sort - Organiza o array pelo unicode e modifica o array original.
+        console.log("-------Sort--------");
+        var instrumentos = ['Guitarra', 'Baixo', 'Violão'];
+        instrumentos.sort();
+        console.log(instrumentos);
+
+        var idades = [32,21,33,43,1,12,8];
+        idades.sort();
+        console.log(idades);
+    </script>
+</body>
+</html>

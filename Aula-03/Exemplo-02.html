@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo-02</title>
+</head>
+<body>
+    <script>
+        const lista = [1,2,3,4,5,6];
+        console.log(lista);
+
+        //o map seleciona cada elemento da array e aplica a função selecionada em todos eles
+        const novaLista = lista.map((item) => item * 5);
+        console.log(novaLista);
+
+        //soma o valor do item com a posição
+        const novaLista2 = lista.map((item,index) => item + index) //vai somar o valor + a posição, o nome dos parametros nao importa, apenas a posicao
+        //ou seja, na funçao map podemos usar para manipular o array tanto o 'item' quanto o 'index'
+
+        //função anonima, ou seja, nao tem nome e 
+        //arrow function, tem apenas o retorno da função
+        //ambas sao funçoes voltadas pra praticidade em determinadas situaçoes, elas nao esperam que sejam chamadas, sao apenas executadas
+
+        const aulas = [10, 25, 30];
+        
+        const total1 = aulas.reduce((acumulador, atual) => {
+            return acumulador + atual;
+        }); // o reduce reduz o array para um unico valor final x
+
+        console.log(total1); //65
+
+        const total2 = aulas.reduce((acc, cur) => acc + cur, 100);// o parametro apos a virgula significa que o resultado somado de todos itens apos isso tem que ser acrescido de 100
+        console.log(total2); //165
+
+        //findIndex - localiza o infíce de um item na lista
+        let frutas = ['Banana', 'Pera', 'Uva', 'Maçã'];
+        const buscaUva = frutas.findIndex(
+            (fruta) => {
+                return fruta === 'Uva';
+            }
+        ); //2
+        console.log("Posição Uva:" + buscaUva);
+
+        //find - localiza um item na lista
+        let numeros = [6, 43, 22, 88, 10, 29];
+        let buscaMaior45 = numeros.find(x => x > 45); //88
+        console.log(buscaMaior45);
+
+        //includes - verifica se tem algo dentro de uma array
+        let nomesTeste = ['Matheus', 'Lucas', 'João'];
+        console.log(nomesTeste.includes('Simone')); //retorna false
+
+        if(nomesTeste.includes('Simone')) {
+            console.log("Simone está na lista!");
+        } else {
+            console.log("Simone não está na lista!");
+        }
+
+        //some: se pelo menos um return da interação for verdadeiro, ele retorna true
+        console.log(nomesTeste.some(nome => nome === 'Lucas'));
+
+        //every: verifica se todos os itens de um array ou de um objeto atendem a uma condição/valor
+        numeros = [ 6, 43, 22, 2, 101, 25];
+        const maiorQue3 = numeros.every(x => x > 3); //true - verificar
+        console.log(maiorQue3);
+
+        //filter - retorna um array com a lista de valores que durante a sua iteração retornaram um valor verdadeiro
+        numeros = [6, 43, 22, 88, 101, 29];
+        buscaMaior45 = numeros.filter(x => x > 45);
+        console.log(buscaMaior45); //88, 101
+
+        
+
+    </script>
+</body>
+</html>
