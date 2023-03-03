@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo-02</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #data {
+            background-color: black;
+            padding-top: 7px;
+            padding-right: 5px;
+            text-align: right;
+            height: 30px;
+            width: calc(100vw-padding);
+            color: white;
+        }
+        
+        #saudacao {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body id="body">
+   <div id="data"></div>
+   <span id="saudacao"></span>
+   <script>
+        var semana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+        var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+        var hoje = new Date();
+
+        const div = document.querySelector('#data');
+        
+        const body = document.querySelector('#body');
+        body.addEventListener('onload',escreveData());
+
+        const saudacao = document.querySelector('#saudacao');
+
+        function escreveData() {
+            var dia = hoje.getDay();
+            var sem = semana[hoje.getDay()];
+            var mes = meses[hoje.getMonth()];
+
+            var dataEscrita = `${sem}, dia ${dia}, de ${mes}`;
+            div.textContent = dataEscrita; 
+            configByTime();
+        }
+
+        function configByTime(){
+            if(hoje.getHours() < 18) {
+                body.style.backgroundColor = 'Yellow';
+                body.style.color = 'Red';
+                document.getElementById("saudacao").textContent = "Bom dia!";
+            } else {
+                body.style.backgroundColor = 'gray';
+                body.style.color = 'white';
+                document.getElementById("saudacao").textContent = "Bom dia!";
+            }
+        }
+   </script>
+</body>
+</html>
