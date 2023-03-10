@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos - Referencia</title>
+
+    <script>
+
+        //Alterando o valor de uma propriedade
+        var curso = {
+            sigla: "TI",
+            nome: "Técnico em Informática"
+        };
+
+        //imprime true
+        console.log("sigla" in curso);
+
+        //imprime TI
+        console.log(curso.sigla);
+
+        delete curso.sigla; //remove o atributo
+
+        //imprime false
+        console.log("sigla" in curso);
+
+        //imprime undefined
+        console.log(curso.sigla);
+
+        //copiando uma referencia - cópia
+        /* var x = {...curso}; */
+
+        //copiando uma referencia - ponteiro
+        var x = curso;
+        x.sigla = "SI",
+        x.nome = "Sistemas de Informação"; 
+
+        //imprime SI
+        console.log(curso.sigla);
+        console.log(x.sigla);
+
+        //Sistemas de Informação
+        console.log(curso.nome);
+        console.log(x.nome);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

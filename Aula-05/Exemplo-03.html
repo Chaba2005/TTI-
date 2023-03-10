@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator (...)</title>
+
+    <script>
+        var pessoa = {
+            nome: "Matheus",
+            idade: 17,
+            cargo: "Aluno"
+        };
+
+        console.log(pessoa); //imprime o objeto todo
+
+        //let nome = pessoa.nome;
+        let {nome} = pessoa; //declara var nome com o conteudo do atributo pessoa.nome
+        console.log(nome);
+
+        let {sobrenome} = pessoa;
+        console.log(sobrenome);
+
+        let {idade, cargo} = pessoa;
+        console.log(idade);
+        console.log(cargo);
+
+        //let funcao = pessoa.cargo;
+        let {cargo:funcao} = pessoa; //declara var funcao com o conteudo do atributo pessoa.cargo
+        console.log(funcao);
+
+        nome = "Maria"; //altera o valor de nome na var nome, mas o objeto continua com o valor original
+        pessoa.nome = "Dois";
+        console.log(nome);
+        console.log(pessoa);
+
+        var novaPessoa = {
+            ...pessoa,
+            anoAtual: 2023,
+            cidade: "Limeira"
+        };
+
+        console.log(novaPessoa);
+
+        function cadastrarPessoa(info) {
+            let novosDados = {
+                ...info,
+                cargo: "Aluno",
+                status: "sofrendo",
+                codigo: 4321
+            };
+
+            console.log(novosDados);
+        }
+
+        cadastrarPessoa({nome: "Matheus", sobrenome: "Figueiredo", anoInicio: 2021});
+    </script>
+</head>
+<body>
+    <h1>Introdução ao Javascript - Desconstrução Objetos</h1>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo-02</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    //Um objeto pode se relacionar com outros objetos através de propriedades.
+
+    var curso = {
+        sigla: "TI",
+        nome: "Técnico em Informática",
+        disciplinas: [
+            {
+                sigla: 'DS',
+                nome: 'Desenvolvimento de Aplicações WEB'
+            },
+            {
+                sigla: 'LP',
+                nome: 'Lógica de Programação'
+            },
+        ]
+    }
+
+    //Alterando o valor de uma propriedade
+    curso.sigla = "SI";
+    curso.nome = "Sistemas de Informação";
+
+    console.log(curso.sigla);
+    console.log(curso.nome);
+    console.log(curso.disciplinas);
+    console.log(curso.disciplinas[0].sigla);
+    console.log(curso.disciplinas[0].nome);
+    curso.disciplinas[0].sigla = "DAW";
+
+    console.log(curso.disciplinas[1].sigla);
+    console.log(curso.disciplinas[1].nome);
+</script>
+</html>
