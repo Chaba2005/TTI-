@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+<body>
+    <h1>Cálculo de IMC</h1>
+
+    <form>
+        <label for="">Peso:</label><br>
+        <input id="peso" name="peso" type="text">
+        <br><br>
+        <label for="">Altura:</label><br>
+        <input id="altura" name="peso" type="text">
+        <br><br>
+        <input type="button" value="Verificar" onclick="verficarImc();">
+    </form>
+    <span class="resultado"></span>
+    <script>
+        function verficarImc() {
+            var peso = document.querySelector('#peso').value;
+            var altura = document.querySelector('#altura').value;
+            var resultado = document.querySelector('.resultado');
+
+            if((peso == '') || (altura == '')){
+                resultado.textContent = "Informe o peso e a altura!! SEM MÃE!!";
+                resultado.style.backgroundColor = "yellow";
+                resultado.style.color = "red";
+                resultado.style.fontSize = "100px";
+            } else {
+                var imc = 0;
+                imc = peso/(altura*altura);
+                imc = Math.round(imc);
+
+                if(imc <= 18.5) {
+                    resultado.textContent = "Você está abaixo do peso! IMC = " + imc;
+                    resultado.style.color = "green";
+                    resultado.style.fontSize = "50px"
+                } else 
+                    resultado.textContent = "Não está abaixo do peso! IMC = " + imc;
+                    resultado.style.color = "darkgreen";
+                    resultado.style.fontSize = "50px"
+            }
+        }
+    </script>
+</body>
+</html>
