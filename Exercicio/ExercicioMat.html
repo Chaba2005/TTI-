@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área e Perímetro</title>
+</head>
+<body>
+    <form action="">
+        <p>Raio:</p>
+        <input type="text" id="raio"><br>
+        <input type="button" id="area" value="Área" onclick="calcArea()">
+        <input type="button" id="perimetro" value="Perímetro" onclick="calcPeri()">
+
+        <br>
+
+        <p>Área:</p>
+        <input type="text" id="Area"> <br>
+
+        <p>Perímetro:</p><span id="Perimetro"></span>
+    </form>
+    
+    <script>
+        function calcArea() {
+            var raio = parseFloat(document.getElementById('raio').value);
+            let resultado = (raio*raio)*3.14;
+            console.log(raio);
+            document.getElementById('Area').value = resultado;
+            document.getElementById('Area').style.color = 'blue';
+            if(document.getElementById('raio').value.trim() == '') {
+                document.getElementById('Area').value = 'Preencha o campo!',
+                document.getElementById('Area').style.color = 'red'
+            }
+        }
+
+        function calcPeri() {
+            var raio = parseFloat(document.getElementById('raio').value);            
+            let resultado = 2*3.14*raio;            
+            document.getElementById('Perimetro').textContent = resultado;
+            document.getElementById('Perimetro').style.color = 'blue';
+            if(document.getElementById('raio').value.trim() == '') {
+                document.getElementById('Perimetro').textContent = 'Preencha o campo!',
+                document.getElementById('Perimetro').style.color = 'red'
+            }
+        }
+    </script>
+</body>
+</html>
